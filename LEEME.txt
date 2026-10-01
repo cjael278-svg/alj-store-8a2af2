@@ -1,0 +1,12 @@
+ALJ STORE - PASOS PARA PUBLICARLA CON PEDIDOS DIRECTOS A DISCORD
+
+1) En Discord: Ajustes del canal > Integraciones > Webhooks > Nuevo webhook > Copiar URL.
+2) Sube esta carpeta a un repositorio de GitHub (o usa Netlify CLI: "netlify deploy --prod").
+3) En Netlify: Add new site > Import from Git > elige el repositorio. No hace falta configurar nada mas (netlify.toml ya lo trae).
+4) En Netlify: Site configuration > Environment variables > agrega
+      DISCORD_WEBHOOK_URL = (la URL que copiaste en el paso 1)
+   y vuelve a desplegar (Deploys > Trigger deploy).
+5) Abre tu sitio, agrega un producto, envia un pedido y revisa el canal de Discord.
+
+Cambia el PIN de administrador (ADMIN_PIN) dentro de index.html, en el bloque CONFIGURACION.
+Si el webhook se filtra, borralo en Discord y crea otro.
